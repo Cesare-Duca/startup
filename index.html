@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>PICTURE-THIS | Startup de photographie</title>
+    <link rel="stylesheet" href="/LE WAGON/StratUP/!Mon_Scirpt.css">
+  </head>
+  <body>
+    <header>
+      <h1 style="text-align: center;"> Picture-This 📷</h1>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">L'équipe</a></li>
+          <li><a href="#contact">Contactez-nous</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="services">
+        <div>
+        <h2>Nos services:</h2>
+        <ul>
+          <li>Photographie de mariage</li>
+          <li>Photographie de famille</li>
+          <li>Photographie d'événements</li>
+          <li>Photographie de produits</li>
+        </ul>
+        </div>
+      </section>
+      <section id="portfolio">
+        <div>
+        <h2>Portfolio:</h2>
+        <ul>
+          <li><img src="Mariage.jpg" alt="Alice & Stéphane le jour de leur mariage"></li>
+          <li><img src="f1.jpg" alt="Premier Essais de Kimy Raikkonen dans sa Formule 1 Ferrari"></li>
+          <li><img src="Manifestation.jpg" alt="La Manifestation Parisienne de Mars 2023"></li>
+        </ul>
+        </div>
+      </section>
+      <section id="team">
+        <div>
+        <h2>L'équipe:</h2>
+        <ul>
+          <li><img src="Chloe.jpg" alt="Chloe, notre photographe Matrimoniale">
+              <p>Chloe | Notre Photographe Matrimoniale</p>
+          </li>
+          <li><img src="stéphane.jpg" alt="Stéphane, l'expert en nature">
+              <p>Stéphane | L'expert de la nature </p>
+          </li>
+          <li><img src="Jean-Marie.jpg" alt="Jean-Marie">
+              <p>Jean-Marie | Photographe Polyvalent</p>
+          </li>
+        </ul>
+        </div>
+      </section>
+      <section id="contact">
+        <div>
+        <h2>Contactez-nous:</h2>
+        <form id="reprise-form">
+          <label for="nom">Nom :</label>
+          <input type="text" id="nom" name="nom" required><br>
+        
+          <label for="email">E-mail :</label>
+          <input type="email" id="email" name="email" required><br>
+        
+          <label for="état">Comment était votre experience auprès de nos services? :</label>
+          <select id="état" name="état" required>
+            <option value="">Sélectionnez un niveau de satisfaction</option>
+            <option value="Très bon">Très bon</option>
+            <option value="Bon">Bon</option>
+            <option value="Moyen">Moyen</option>
+            <option value="Mauvais">Mauvais</option>
+            <option value="Mauvais">Aucune experience</option>
+          </select><br>
+        
+          <label for="commentaire">Commentaire :</label>
+          <textarea id="commentaire" name="commentaire" required></textarea><br>
+        
+        
+          <input type="submit" value="Envoyer">
+        </form>
+        
+        <script>
+          var form = document.getElementById("reprise-form");
+          form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+        
+            var nom = document.getElementById("nom").value;
+            var email = document.getElementById("email").value;
+            var état = document.getElementById("état").value;
+            var commentaire = document.getElementById("commentaire").value;
+        
+            var sujet = "Commentaire de " + nom;
+            var destinataire = "b00805689@essec.edu";
+        
+            var lien = "mailto:" + destinataire + "?subject=" + encodeURIComponent(sujet) + "&body=" + encodeURIComponent("Nom: " + nom + "\nEmail: " + email + "\nEtat: " + état + "\nCommentaire: " + commentaire);
+        
+            window.location.href = lien;
+          });
+        </script>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 PICTURE-THIS La startup de photographie. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>
